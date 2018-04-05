@@ -1,0 +1,5 @@
+优化设置，此项目不能运行
+
+利用properties配置数据库
+
+利用typeAliases为实体类设置别名

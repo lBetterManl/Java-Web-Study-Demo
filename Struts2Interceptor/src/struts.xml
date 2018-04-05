@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="yhc" extends="struts-default">
+	<!-- Struts2规定，对拦截器的配置应方到Action的配置之前 -->
+	<interceptors>
+	<!-- 文字过滤拦截器配置replace是拦截器的名字 -->
+		<interceptor name="replace" class="com.yhc.action.MyInterceptor"></interceptor>
+	</interceptors>
+	<!-- 文字过滤Action的配置 -->
+		<action name="public" class="com.yhc.action.PublicAction">	
+			<!-- Struts2系统默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<!-- 使用自定义拦截器 -->	
+			<interceptor-ref name="replace"></interceptor-ref>
+			<result name="success">/success.jsp</result>	
+			<result name="login">/success.jsp</result>		
+		</action>
+	</package>
+</struts>    

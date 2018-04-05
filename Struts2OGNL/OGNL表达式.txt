@@ -1,0 +1,27 @@
+如果需要一个集合元素时，如List对象或者Map对象，可以使用OGNL中与集合相关的表达式
+
+OGNL中使用List对象的格式如下：
+{e1,e2,e3}
+该表达式会直接生成一个List对象，在生成的List对象中包含3个元素：e1,e2,e3
+如果需要更多元素，可以继续添加
+
+OGNL中使用Map对象的格式如下：
+#{key1:value1, key2:value2, key3:value3,...}
+该表达式会直接生成一个Map对象
+
+对于集合元素的判定，OGNL表达式可以使用in和not in操作。
+例如：
+	<s:if test="'a' in {'a', 'b'}">
+		...
+	</s:if>
+或者：
+	<s:if test="'a' not in {'a', 'b'}">
+		...
+	</s:if>
+	
+OGNL还允许使用某些规则获取集合对象的子集，常用操作如下：
+	? 用于获取符合逻辑的多个元素
+	^ 用于获取符合逻辑的第一个元素
+	$ 用于获取符合逻辑的最后一个元素
+例如 
+	Student.sex{?#this.sex=='male'}	//获取Student的所有值为male的sex集合

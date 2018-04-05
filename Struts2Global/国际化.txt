@@ -1,0 +1,23 @@
+新建扩展名为properties的资源文件
+
+key =value
+loginName =用户名
+loginPassword =密码
+
+资源文件名.properties
+资源文件名_语言种类.properties
+globalMessage_GBK.properties
+globalMessage_en_US.properties
+
+需要把中文转换为Unicode代码
+开始》运行》cmd》资源文件所在的文件夹  native2ascii -encoding UTF-8 globalMessage_GBK.properties globalMessage_zh_CN.properties
+
+在struts.xml文件中配置
+	<constant name="struts.custom.i18n.resources" value="globalMessages"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<package name="I18N" extends="struts-default">
+		<action name="checkLogin"  class="com.yhc.action.LoginAction">
+			<result name="success">/loginSuccess.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+	</package>

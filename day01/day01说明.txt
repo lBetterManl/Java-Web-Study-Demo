@@ -1,0 +1,43 @@
+cn.test.eclipse
+hello world程序
+快捷键
+JUnit测试方法
+
+cn.test.demo
+静态导入
+自动装箱 自动拆箱 迭代器
+增强for循环
+可变参数
+
+cn.test.enumeration
+枚举型  构造函数
+cn.test.enumeration2
+枚举的抽象类
+
+cn.test.reflect
+反射  反射构造函数  反射字段
+
+cn.test.introspector
+bean
+
+cn.test.beanutils
+beanutils
+
+cn.test.generic
+泛形 List<E>
+	Map<K,V>
+	增强for循环	取的时候按顺序用LinkedHashMap
+	04自定义带泛形的方法
+	05泛形练习
+
+eg:	运行时出错，编码不出错
+	List list = new ArrayList();
+	list.add("aaa");	
+	Integer i = (Integer) list.get(0);
+	
+泛形的几个注意问题：	<E>念typeof E   给E赋值，称为参数化了的类型
+ 1.使用泛形时，泛形类型必须为引用类型，不能为基本类型
+ 2.如果两边都是用泛形，泛形两边必须一样
+ 3.只用一边可行：
+ 	ArrayList<String> list = new ArrayList();
+   	ArrayList list = new ArrayList<String>();

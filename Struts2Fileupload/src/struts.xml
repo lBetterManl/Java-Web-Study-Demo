@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="globalMessages"/>
+	<constant name="struts.i18n.encoding" value="utf-8"/>           
+    
+	<package name="yhc" extends="struts-default">
+		<!-- 文件上传 -->
+		<action name="upLoad" class="com.yhc.action.UploadAction">	
+			<!-- fileUpload拦截器配置 -->
+			<interceptor-ref name="fileUpload">
+				 <!--采用设置文件的类型 来限制上传文件的类型-->  
+                <param name="allowedTypes">image/jpg, image/gif, image/png, image/jpeg</param>    
+                <!--设置文件的大小 默认为 2M [单位：byte] -->  
+                <param name="maximumSize">10000000</param>  
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+			<!-- 设置上传文件保存的文件夹 -->
+			<param name="savePath">./upload</param>
+			<result name="input">/fileUp.jsp</result>
+			<result name="success">/fileUpSuccess.jsp</result>		
+		</action>
+		
+		<!-- 文件下载 -->
+		<action name="fileDownload" class="com.yhc.action.DownloadAction">
+			<!-- 设置文件路径 -->
+			<param name="path">/download/123.jpg</param>
+			<!-- 设置stream属性 -->
+			<result name="success" type="stream">
+				<param name="contentType">image/jpg</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="hlm.jpg"</param>
+				<param name="bufferSzie">40960</param>
+			</result>
+		</action>
+	</package>
+</struts>    

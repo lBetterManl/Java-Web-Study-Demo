@@ -1,0 +1,6 @@
+index.jsp 简单示例
+
+sqlConn.jsp和sqlConn.java 连接代码分开
+
+addStu.jsp添加信息
+addCheck.jsp 增 删 改 查

@@ -1,0 +1,11 @@
+Struts2标签
+<%@taglib prefix="s" uri="/struts-tags"%>
+
+导入struts2-dojo-plugin-2.3.4.1.jar
+<%@taglib prefix="sx" uri="/struts-dojo-tags"%>
+把<s:head theme="ajax">改为<sx:hesd/>
+<sx:autocompleter>
+JSON文件
+
+
+autocompleter自动补全

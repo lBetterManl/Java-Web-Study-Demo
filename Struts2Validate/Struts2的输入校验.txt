@@ -1,0 +1,23 @@
+服务器端验证
+pulic String execute(){
+	if(userName ==null || userName =="")
+	{
+		return INPUT;
+	}
+	else if(userPassword.length()>16 || userPassword.length()<6)
+	{
+		return INPUT;
+	}
+	else if(userAge >130 || userAge <0)
+    {
+    	return INPUT;
+    }
+    else if(userTelephone.length()!=8)
+    {
+    	return INPUT;
+    }
+    else
+    {
+    	return SUCCESS;
+    }
+}

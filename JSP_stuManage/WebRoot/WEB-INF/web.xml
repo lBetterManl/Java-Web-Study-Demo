@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  
+   <servlet>
+  	<!-- 指定servlet的名称 -->
+  	 <servlet-name>FirstServlet</servlet-name>
+  	<!-- 指定servlet编译生成的 .class文件的相对路径，区分大小写 -->
+  	<servlet-class>servlet.FirstServlet</servlet-class>
+  </servlet>
+  	<!-- 在解析到 <url-pattern> 中的路径请求是，由<servlet-name>指定的servlet来处理；  
+  	 <servlet-mapping>用于对<servlet>中指定的servlet映射路径  -->
+  <servlet-mapping>
+  	<servlet-name>FirstServlet</servlet-name>
+  	<url-pattern>/FirstServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  	<servlet-name>addStu</servlet-name>
+  	<servlet-class>cn.student.servlet.addStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addStu</servlet-name>
+  	<url-pattern>/addStu</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>lookStu</servlet-name>
+  	<servlet-class>cn.student.servlet.lookStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>lookStu</servlet-name>
+  	<url-pattern>/lookStu</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>selectUpdateStu</servlet-name>
+  	<servlet-class>cn.student.servlet.selectUpdateStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>selectUpdateStu</servlet-name>
+  	<url-pattern>/selectUpdateStu</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>updateStu</servlet-name>
+  	<servlet-class>cn.student.servlet.updateStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>updateStu</servlet-name>
+  	<url-pattern>/updateStu</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>deleteStu</servlet-name>
+  	<servlet-class>cn.student.servlet.deleteStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deleteStu</servlet-name>
+  	<url-pattern>/deleteStu</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>selectDeleteStu</servlet-name>
+  	<servlet-class>cn.student.servlet.selectDeleteStu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>selectDeleteStu</servlet-name>
+  	<url-pattern>/selectDeleteStu</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>stuAdmin.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

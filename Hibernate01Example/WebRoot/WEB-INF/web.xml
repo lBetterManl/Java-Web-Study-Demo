@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Hibernate01Example</display-name>
+  <servlet>
+    <servlet-name>QueryUser</servlet-name>
+    <servlet-class>com.servlet.QueryUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>com.servlet.UpdateUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.servlet.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteUser</servlet-name>
+    <servlet-class>com.servlet.DeleteUser</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>QueryUser</servlet-name>
+    <url-pattern>/QueryUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/UpdateUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUser</servlet-name>
+    <url-pattern>/DeleteUser</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

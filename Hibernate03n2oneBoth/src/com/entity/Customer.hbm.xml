@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entity">
+    <class name="Customer" table="CUSTOMERS">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="CUSTOMER_ID" />
+            <generator class="native" />
+        </id>
+        <property name="customerName" type="java.lang.String">
+            <column name="CUSTOMER_NAME" />
+        </property>
+        
+        <!-- 映射1对多的那个集合属性,inverse为true放弃控制权 
+        	 cascade 设定级联操作。开发时不建议设定改属性，建议使用手工方式处理。
+        	 order-by 在查询时对集合中的元素进行排序，order-by中使用的是表的字段名，而不是持久化属性名
+        -->
+        <set name="orders" table="ORDERS" inverse="true" cascade="delete" order-by="ORDER_NAME DESC">
+        	<key column="CUSTOMER_ID"></key>
+        	<one-to-many class="Order"/>
+        </set>
+    </class>
+</hibernate-mapping>

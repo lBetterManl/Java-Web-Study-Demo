@@ -1,0 +1,9 @@
+根据classId查询对应的班级信息,包括学生,老师
+
+Classes——Teacher	一对一
+
+Classes——Student    一对多  
+
+MyBatis中使用collection标签来解决一对多的关联查询，ofType属性指定集合中元素的对象类型。
+
+MyBatis中使用association标签来解决一对一的关联查询，javaType属性指定集合中元素的对象类型。

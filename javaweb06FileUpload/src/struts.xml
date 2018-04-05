@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="app"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+    	<!-- 文件上传 -->
+			<action name="*" class="com.example.{1}Action">
+				<result name="success">/success.jsp</result>
+				<result name="input">/error.jsp</result>
+				<interceptor-ref name="fileUpload">
+  					<param name="allowedTypes">
+     					image/png,image/gif,image/jpeg
+  					</param>
+  					<param name="maximumSize">5M</param>
+				</interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>  			
+			</action>
+			
+		<!-- 下载 -->
+		<action name="download" class="com.example.DownloadAction">
+			
+			<result name="succ" type="stream">  
+                <param name="contentType">application/octet-stream;charset=ISO8859-1</param>  
+                <param name="inputName">inputStream</param>  
+                <param name="contentDisposition">attachment;filename=${fileName}</param>  
+                <param name="bufferSize">8192</param>  
+            </result>  
+			<result name="input">/error.jsp</result>
+		</action>
+    </package>
+    
+
+
+</struts>

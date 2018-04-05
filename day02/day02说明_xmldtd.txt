@@ -1,0 +1,24 @@
+cn.test.xmldtd
+xml
+	1.book <!DOCTYPE 书架 SYSTEM "book.dtd"> xml格式
+	2.通过ATTLIST设置标签属性
+	 <!ATTLIST 元素名
+	 	属性名1 属性值类型 设置说明
+	 	属性名2 属性值类型 设置说明
+	 	属性名3 属性值类型 设置说明
+	 	....
+	 >
+	 举例
+	 <!ALLIST 商品
+	 	类别 CDATA #REQUIRED
+	 	颜色 CDATA #IMPLIED
+	 	大小 (大|中|小) "中"
+	 >
+	对应的XML文件
+	 <商品 类别="服装" 颜色="黄色">...</商品>
+	 <商品 类别="服装">...</商品>
+	  
+	 实体 
+	 参数实体 <!ENTITY % 实体名称 "实体内容">
+	 	举例 <!ENTITY % TAG_NAME "姓名|EMALL|电话">
+	 	   <!ELEMENT 个人信息 (%TAG_NAME;|生日)

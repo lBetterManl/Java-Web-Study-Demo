@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yhc.entity">
+
+    <class name="Employee" table="SSH_EMPLOYEE">
+
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+
+        <property name="lastName" type="java.lang.String">
+            <column name="LAST_NAME" />
+        </property>
+
+		 <!-- 映射多对一的关联关系. 使用many-to-one 来映射多对一的关系
+        	 name: 多这一端关联的一那一端的属性的名字
+        	 class: 一那一端的属性对应的类名
+        	 column: 一那一端在多的这一端对应的数据表中的外键的名字
+         -->
+        <many-to-one name="department" class="Department">
+            <column name="DEPARTMENT_ID" />
+        </many-to-one>
+
+    </class>
+
+</hibernate-mapping>

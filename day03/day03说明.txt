@@ -1,0 +1,23 @@
+sax对xml解析
+cn.test.sax
+	01得到xml文档所有内容
+	02解析xml指定标签
+	03把xml文档中的每一本书封装到一个book对象
+	      ，并把多个book对象放到一个list集合
+
+dom4j	      
+cn.test.dom4j   lib
+	01dom4j乱码问题 添加标签 删除 修改
+	
+XPath提取xml文档数据  属于dom4j
+cn.test.xpath
+	01应用xpath提取xml文档数据
+	02查找users.xml文档是否有和用户相匹配的用户名和密码
+
+XML Schema 比dtd牛逼
+用于定义和描述xml文档姐都与内容的模式语言，其出现是为了客服DTD的局限性
+			本身为xml用来约束另一xml 扩展名为.xsd   属于w3c组织
+			必须有一根节点 名称为schema
+	shiporder xsd xml 例子
+	
+cn.test.demo 面试题  平面图形题  利用二维数组

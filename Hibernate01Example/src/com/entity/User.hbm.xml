@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <!-- 员工信息字段配置信息 -->
+ <hibernate-mapping>
+ 	<class name="com.entity.User" table="tb_user">
+ 		<!-- 指定的缓存的同步策略 -->
+ 		<cache usage="read-write"/>
+ 		<id name="id" type="int">
+ 			<generator class="native"/>
+ 		</id>
+ 		<property name="name" type="string" length="45" not-null="true"></property>
+ 		<property name="password" type="string" length="45" not-null="true"></property>
+ 	</class>
+ </hibernate-mapping>
