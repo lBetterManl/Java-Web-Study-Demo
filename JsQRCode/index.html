@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS生成二维码</title>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+</head>
+<body>
+	生成二维码如下：<br>
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+		$('#qrcode').qrcode("www.baidu.com");
+	</script>
+	<br>
+	设置二维码的大小：<br>
+	<div id="qrcode2"></div>
+	<script type="text/javascript">
+		$("#qrcode2").qrcode({width: 100,height: 100,text: "ni hao"});
+	</script>
+</body>
+</html>
